@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<WizardsFugue_Core>
+			<codePool>local</codePool>
+			<active>true</active>
+            <depends>
+                <Mage_Core />
+            </depends>
+		</WizardsFugue_Core>
+	</modules>
+</config>

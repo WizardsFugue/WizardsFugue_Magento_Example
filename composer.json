@@ -1,13 +1,34 @@
 {
 	"name":     "WizardsFugue/magento_example",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.firegento.com"
+        },
+        {
+            "type": "composer",
+            "url": "http://packages.base.cotya.com/"
+        }
+    ],
 	"autoload":{
+        "files": [
+            "./vendor/connect20/Mage_Core_Modules/app/code/core/Mage/Core/functions.php"
+        ],
 	    "classmap": [
-                "src/"
+                "vendor/connect20"
 	    ]
 	},
 	"require":  {
-	    "wizards-fugue/base": "dev-master"
-	}
+	    "wizards-fugue/base": "dev-master",
+        "connect20/mage_all_latest": "1.7.0.2",
+        "magento-hackathon/magento-composer-installer":    "dev-master"
+	},
+    "extra":{
+        "magento-deploystrategy": "symlink",
+        "magento-force": true,
+        "magento-root-dir": "not_used/"
+    }
 
+    
 
 }

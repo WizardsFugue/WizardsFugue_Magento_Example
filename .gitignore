@@ -1,0 +1,16 @@
+
+/vendor
+/not_used
+composer.lock
+
+mage/app/etc/local.xml
+
+mage/var/*
+!mage/var/empty
+
+public/media/*
+!public/media/empty
+public/js/*
+!public/js/empty
+public/skin/*
+
