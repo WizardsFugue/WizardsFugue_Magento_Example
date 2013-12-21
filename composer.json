@@ -1,0 +1,13 @@
+{
+	"name":     "WizardsFugue/magento_example",
+	"autoload":{
+	    "classmap": [
+                "src/"
+	    ]
+	},
+	"require":  {
+	    "wizards-fugue/base": "dev-master"
+	}
+
+
+}
