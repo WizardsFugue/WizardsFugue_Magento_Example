@@ -23,6 +23,9 @@
         "connect20/mage_all_latest": "1.7.0.2",
         "magento-hackathon/magento-composer-installer":    "dev-master"
 	},
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
     "extra":{
         "magento-deploystrategy": "symlink",
         "magento-force": true,
