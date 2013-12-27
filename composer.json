@@ -20,12 +20,14 @@
 	},
 	"require":  {
 	    "wizards-fugue/base": "dev-master",
-        "connect20/mage_all_latest": "1.7.0.2",
+        "connect20/mage_all_latest": "1.7.*",
         "magento-hackathon/magento-composer-installer":    "dev-master"
 	},
     "require-dev": {
         "phpunit/phpunit": "3.7.*"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "extra":{
         "magento-deploystrategy": "symlink",
         "magento-force": true,
