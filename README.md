@@ -1,6 +1,8 @@
 WizardsFugue_Magento_Example
 ============================
 
+[![Build Status](https://travis-ci.org/WizardsFugue/WizardsFugue_Magento_Example.png?branch=master)](https://travis-ci.org/WizardsFugue/WizardsFugue_Magento_Example)
+
 Example on how to setup Magento complete with Composer
 
 
