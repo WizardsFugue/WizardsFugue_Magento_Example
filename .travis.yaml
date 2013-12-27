@@ -1,0 +1,37 @@
+language: php
+php:
+  - "5.5"
+env:
+  - MAGENTO=1.7 
+  - MAGENTO=1.8 
+
+before_script:
+  - ./scripts/travis/set_magento_version.php $MAGENTO
+  - mysql -e 'create database magento_test;'
+  - bunzip2 ./scripts/travis/magento_test.sql.bz2
+  - mysql --database=magento_test < ./scripts/travis/magento_test.sql
+  - cp ./scripts/travis/local.xml ./mage/app/etc/local.xml
+  - curl -sS https://getcomposer.org/installer | php
+  - chmod +x ./composer.phar
+  - ./composer.phar --version
+  - ./composer.phar install --dev
+
+notifications:
+  email:
+    recipients:
+      - flyingmana@googlemail.com
+    on_success: never
+    on_failure: always
+  irc:
+    channels:
+      - "irc.freenode.org#magento-composer"
+    on_success: change # default: always
+    on_failure: always # default: always
+
+branches:
+  only:
+    - master
+    - stable
+    - /^dev-.*$/
+    - /^patch-.*$/
+    
