@@ -6,7 +6,7 @@ env:
   - MAGENTO=1.8 
 
 before_script:
-  - ./scripts/travis/set_magento_version.php $MAGENTO
+  - php ./scripts/travis/set_magento_version.php $MAGENTO
   - mysql -e 'create database magento_test;'
   - bunzip2 ./scripts/travis/magento_test.sql.bz2
   - mysql --database=magento_test < ./scripts/travis/magento_test.sql
