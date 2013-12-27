@@ -1,6 +1,7 @@
 
 /vendor
-/not_used
+/not_used/*
+!/not_used/empty
 composer.lock
 
 mage/app/etc/local.xml
