@@ -21,6 +21,12 @@
                 "vendor/connect20"
 	    ]
 	},
+    "include-path": [
+        "./mage/",
+        "./vendor/connect20/Mage_Core_Modules/app/code/core",
+        "./vendor/connect20/lib_zf/lib/",
+        "./vendor/connect20/lib_zf_locale/lib/"
+    ],
 	"require":  {
 	    "wizards-fugue/base": "dev-master",
         "connect20/mage_all_latest": "1.7.*",
