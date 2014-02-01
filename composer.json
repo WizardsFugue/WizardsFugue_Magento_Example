@@ -29,11 +29,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra":{
-        "magento-deploystrategy": "symlink",
-        "magento-force": true,
-        "magento-root-dir": "not_used/"
+        "magento-deploystrategy": "none",
+        "magento-force": true
     }
-
-    
-
 }
