@@ -129,7 +129,7 @@ set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 require_once 'app/Mage.php';
 
 try {
-    $app = Mage::app('default');
+    $app = Mage::app('default', 'store', $options);
 
     $installer = Mage::getSingleton('install/installer_console');
     /* @var $installer Mage_Install_Model_Installer_Console */
