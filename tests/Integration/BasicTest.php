@@ -56,6 +56,21 @@ class BasicTest extends \PHPUnit_Framework_TestCase
     public function testGiftmessageMessageHelper()
     {
         $helper = \Mage::helper('giftmessage/message');
-        $this->assertInstanceOf('Mage_GiftMessage_Helper_Message', $helper);
+        $this->assertInstanceOf('Mage_GiftMessage_Helper_Message', $helper, 'GiftMessage is required during checkout and viewing orders');
+    }
+
+    public function testWishlistItemCollection()
+    {
+        $collection = \Mage::getModel('wishlist/item')->getCollection();
+        $this->assertTrue(!!$collection, 'Wishlist is required when editing customers');
+        $this->assertInstanceOf('Mage_Wishlist_Model_Resource_Item_Collection', $collection, 'Wishlist is required when editing customers');
+        //might be Mage_Wishlist_Model_Resource_Item_Collection on older Mages
+    }
+
+    public function testNewsletterSubscriber()
+    {
+        $model = \Mage::getModel('newsletter/subscriber');
+        $this->assertTrue(!!$model, 'Newsletter is required when editing customers');
+        $this->assertInstanceOf('Mage_Newsletter_Model_Subscriber', $model, 'Newsletter is required when editing customers');
     }
 }

@@ -291,7 +291,7 @@
             </depends>
         </Mage_Reports>
         <Mage_Newsletter>
-            <active>false</active>
+            <active>true</active>
             <codePool>core</codePool>
             <depends>
                 <Mage_Core/>
@@ -309,7 +309,7 @@
             </depends>
         </Mage_Tax>
         <Mage_Wishlist>
-            <active>false</active>
+            <active>true</active>
             <codePool>core</codePool>
             <depends>
                 <Mage_Customer/>
