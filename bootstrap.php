@@ -49,6 +49,7 @@ $options['wizards_fudge'] = array(
 
         'media_dir'   => __DIR__ . DS . 'public' . DS . 'media',
 	    'admin_design_dir' => __DIR__ . DS . 'vendor/connect20/Interface_Adminhtml_Default/app/design',
+	    'install_design_dir' => __DIR__ . DS . 'vendor/connect20/Interface_Install_Default/app/design',
     )
 );
 
