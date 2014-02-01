@@ -1,5 +1,7 @@
 language: php
 php:
+  - "5.3"
+  - "5.4"
   - "5.5"
 env:
   - MAGENTO=1.7 
@@ -34,4 +36,3 @@ branches:
     - stable
     - /^dev-.*$/
     - /^patch-.*$/
-    
