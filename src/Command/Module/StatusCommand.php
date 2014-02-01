@@ -3,6 +3,7 @@
 namespace Command\Module;
 
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Helper\TableHelper;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -24,15 +25,46 @@ class StatusCommand extends Command
     }
     
     public function setBasePath($path){
-        $this->basepath = $path;
+        $this->basepath = realpath($path);
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        foreach( $this->getModuleConfigFiles() as $module => $file ){
-            $output->writeln( $module .'=>'.$file );
+        $table = new TableHelper();
+        $table->setHeaders(array('Module Name','active?','found in'));
+        foreach($this->getModuleConfigStates() as $state){
+            $table->addRow( 
+                array(
+                    $state[0], 
+                    $this->formatActiveState($state[1]),
+                    $this->formatFoundIn($state[2]),
+                )
+            );
         }
-        $output->writeln("end");
+        $table->render($output);
+    }
+    
+    protected function getModuleConfigStates(){
+        $result = array();
+        foreach( $this->getModuleConfigFiles() as $module => $file ){
+            $finder = new Finder();
+            $finder->contains($module);
+            $finder->in( $this->basepath.'/mage/app/etc/modules' );
+            foreach($finder as $f){
+                $moduleEtcFile = $f;
+                break;
+            }
+            $moduleState = 0;
+            $color = "yellow";
+            $xml = new \Varien_Simplexml_Element( file_get_contents($moduleEtcFile->getPathname()) );
+            
+            $moduleState = $xml
+                ->modules
+                ->{$module}
+                ->active;
+            $result[] = array( $module, $moduleState, $file );
+        }
+        return $result;
     }
     
     protected function getModuleRelatedFiles(){
@@ -61,7 +93,29 @@ class StatusCommand extends Command
             
             $moduleFiles[$moduleName] = realpath($moduleFile->getPathname());
         }
+        ksort($moduleFiles);
         
         return $moduleFiles;
+    }
+    
+    protected function formatActiveState($moduleState){
+        if($moduleState === null){
+            $moduleState = 'null';
+            $color = "yellow";
+        }elseif($moduleState == "true"){
+            $color = "green";
+        }elseif($moduleState == "false"){
+            $color = "white";
+        }
+        $moduleState = "<fg={$color}>{$moduleState}</fg={$color}>";
+        return $moduleState;
+    }
+    
+    protected function formatFoundIn($path){
+
+        $path = str_replace( $this->basepath, '', $path );
+        $path = str_replace( 'connect20', '<fg=magenta>connect20</fg=magenta>', $path );
+        $path = str_replace( 'wizards-fugue', '<fg=green>wizards-fugue</fg=green>', $path );
+        return $path;
     }
 }
