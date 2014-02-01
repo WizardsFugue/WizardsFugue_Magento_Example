@@ -47,6 +47,7 @@ $options['wizards_fudge'] = array(
         'session_dir' => __DIR__ . DS . 'mage' . DS . 'var' . DS . 'session',
 
         'media_dir'   => __DIR__ . DS . 'public' . DS . 'media',
+	    'admin_design_dir' => __DIR__ . DS . 'vendor/connect20/Interface_Adminhtml_Default/app/design',
     )
 );
 
