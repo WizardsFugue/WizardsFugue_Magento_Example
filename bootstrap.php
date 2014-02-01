@@ -17,7 +17,8 @@ $path = __DIR__ . "/vendor/connect20/Mage_Core_Modules/app/code/core";
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 $path = __DIR__ . "/vendor/connect20/lib_zf/lib/";
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
-
+$path = __DIR__ . "/vendor/connect20/lib_zf_locale/lib/";
+set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 //$mageFilename = MAGENTO_ROOT . '/app/Mage.php';
 //require_once $mageFilename;
 
