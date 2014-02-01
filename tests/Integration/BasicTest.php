@@ -53,4 +53,9 @@ class BasicTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Mage_Core_Helper_Http', $helper);
     }
 
+    public function testGiftmessageMessageHelper()
+    {
+        $helper = \Mage::helper('giftmessage/message');
+        $this->assertInstanceOf('Mage_Giftmessage_Helper_Message', $helper);
+    }
 }
