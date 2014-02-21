@@ -9,6 +9,11 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+// Initialize an application aspect container
+$applicationAspectKernel = ApplicationAspectKernel::getInstance();
+$applicationAspectKernel->init(array(
+                                    'debug' => true, // use 'false' for production mode
+                               ));
 
 $path = __DIR__ . "/mage/";
 define('MAGENTO_ROOT', $path);

@@ -28,6 +28,7 @@
         "symfony/finder": "2.4.*",
         "symfony/dom-crawler": "2.4.*",
         "symfony/css-selector": "2.4.*",
+        "lisachenko/go-aop-php": "0.4.*",
         "magento-hackathon/magento-composer-installer": "dev-master#c054c00f07eae16b08e1d8fc3e4652b3b70163a4"
 	},
     "require-dev": {
