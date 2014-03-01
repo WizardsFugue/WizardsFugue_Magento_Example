@@ -20,7 +20,7 @@ class PhpCompatibilityAspect implements Aspect{
      * @param MethodInvocation $invocation Invocation
      * @Around("execution(public Mage_Core_Helper_Abstract->removeTags(*))")
      */
-    public function beforeMethodExecution(MethodInvocation $invocation)
+    public function removeTags(MethodInvocation $invocation)
     {
         $arguments = $invocation->getArguments();
         $html = $arguments[0];
