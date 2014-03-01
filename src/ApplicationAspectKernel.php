@@ -26,6 +26,8 @@ class ApplicationAspectKernel extends AspectKernel
     protected function configureAop(AspectContainer $container)
     {
         //$container->registerAspect(new \Aspect\MonitorAspect());
+        
+        $container->registerAspect(new \Aspect\PhpCompatibilityAspect());
     }
 
 
