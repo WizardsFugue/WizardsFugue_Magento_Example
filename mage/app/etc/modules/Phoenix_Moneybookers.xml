@@ -22,7 +22,7 @@
 <config>
     <modules>
         <Phoenix_Moneybookers>
-            <active>false</active>
+            <active>true</active>
             <codePool>community</codePool>
             <coreDistPart>true</coreDistPart>
         </Phoenix_Moneybookers>

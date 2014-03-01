@@ -28,7 +28,7 @@
 <config>
     <modules>
         <Mage_ImportExport>
-            <active>false</active>
+            <active>tr</active>
             <codePool>core</codePool>
             <depends>
                 <Mage_Catalog/>

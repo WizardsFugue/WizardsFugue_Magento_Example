@@ -32,7 +32,11 @@
         "magento-hackathon/magento-composer-installer": "dev-master#c054c00f07eae16b08e1d8fc3e4652b3b70163a4"
 	},
     "require-dev": {
-        "phpunit/phpunit": "3.7.*"
+        "phpunit/phpunit": "3.7.*",
+        "phpunit/phpunit-selenium":"*",
+        "phpunit/dbunit":"*",
+        "symfony/yaml":"*"
+
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
