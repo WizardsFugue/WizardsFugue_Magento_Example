@@ -12,7 +12,8 @@ use Go\Aop\Aspect;
 use Go\Aop\Intercept\MethodInvocation;
 use Go\Lang\Annotation\Around;
 
-class PhpCompatibilityAspect implements Aspect{
+class PhpCompatibilityAspect implements Aspect
+{
 
     /**
      * fix deprecated Issue
@@ -30,7 +31,7 @@ class PhpCompatibilityAspect implements Aspect{
             function($html){ return htmlentities($html[0]); },
             $html
         );
-        $html =  strip_tags($html);
+        $html = strip_tags($html);
         return htmlspecialchars_decode($html);
     }
 
