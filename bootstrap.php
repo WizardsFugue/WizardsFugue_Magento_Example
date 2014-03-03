@@ -53,6 +53,7 @@ $options['wizards_fudge'] = array(
         'session_dir' => __DIR__ . DS . 'mage' . DS . 'var' . DS . 'session',
 
         'media_dir'   => __DIR__ . DS . 'public' . DS . 'media',
+        'locale_dir'  => __DIR__ . DS . 'vendor/connect20/Mage_Locale_en_US/app/'.'locale',
 	    'admin_design_dir' => __DIR__ . DS . 'vendor/connect20/Interface_Adminhtml_Default/app/design',
 	    'install_design_dir' => __DIR__ . DS . 'vendor/connect20/Interface_Install_Default/app/design',
     )
