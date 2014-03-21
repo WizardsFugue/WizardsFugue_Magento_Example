@@ -2,6 +2,7 @@ WizardsFugue_Magento_Example
 ============================
 
 [![Build Status](https://travis-ci.org/WizardsFugue/WizardsFugue_Magento_Example.png?branch=master)](https://travis-ci.org/WizardsFugue/WizardsFugue_Magento_Example)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/WizardsFugue/WizardsFugue_Magento_Example/badges/quality-score.png?s=11bb9e65c4a6e636d399e4e2683dd64cacbba4a7)](https://scrutinizer-ci.com/g/WizardsFugue/WizardsFugue_Magento_Example/)
 
 Example on how to setup Magento complete with Composer
 
